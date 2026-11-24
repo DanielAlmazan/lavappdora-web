@@ -134,7 +134,8 @@ a:hover { color: var(--tinta); }
 .bar { fill: #B9CBCE; }
 .bar.dear { fill: var(--punta); }
 .bar.wash { fill: var(--valle); }
-.window { fill: rgba(46, 158, 120, 0.1); stroke: var(--valle); stroke-width: 2; stroke-dasharray: 5 4; }
+.window-fill { fill: rgba(46, 158, 120, 0.1); }
+.window-line { fill: none; stroke: var(--valle); stroke-width: 2; stroke-dasharray: 5 4; }
 .window-label { fill: var(--valle); font-family: var(--redondeada); font-weight: 700; font-size: 15px; }
 .axis { fill: var(--tinta-suave); font-family: var(--humanista); font-size: 13px; }
 .fuente { font-size: 0.9rem; color: var(--tinta-suave); margin: 0.75rem 0 0; }
