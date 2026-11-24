@@ -1,13 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" role="img" aria-label="Lavappdora">
-  <!-- Mismo dibujo que el icono de la app (androidApp/src/main/res/drawable/ic_launcher_*.xml) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Icono de la app con el glifo ampliado: en el icono de Android ocupa el 54 % (zona segura
+       del adaptive icon); aquí el 84 % para que se vea en una pestaña de 16 px. -->
   <defs>
     <linearGradient id="fondo" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#18A0B8"/>
       <stop offset="1" stop-color="#005A6B"/>
     </linearGradient>
   </defs>
-  <rect width="108" height="108" rx="24" fill="url(#fondo)"/>
-  <g transform="translate(27 27) scale(0.54)">
+  <rect width="100" height="100" rx="22" fill="url(#fondo)"/>
+  <g transform="translate(8 8) scale(0.84)">
     <path fill="#FFFFFF" d="M26,93h8a2,2 0 0 1 2,2v3a2,2 0 0 1 -2,2h-8a2,2 0 0 1 -2,-2v-3a2,2 0 0 1 2,-2zM66,93h8a2,2 0 0 1 2,2v3a2,2 0 0 1 -2,2h-8a2,2 0 0 1 -2,-2v-3a2,2 0 0 1 2,-2z"/>
     <path fill="#FFFFFF" d="M24,0H76A14,14 0 0 1 90,14V82A14,14 0 0 1 76,96H24A14,14 0 0 1 10,82V14A14,14 0 0 1 24,0Z"/>
     <path fill="#CDE7ED" d="M10,21H90V23H10Z"/>
