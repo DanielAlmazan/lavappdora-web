@@ -13,15 +13,9 @@ Web estática de Lavappdora: landing y páginas legales. HTML y CSS a mano, sin 
 | `img/` | Icono y capturas de la app |
 | `CNAME` | Dominio propio para GitHub Pages |
 
-## Antes de publicar
+## Datos legales
 
-Rellena los datos marcados en amarillo (`<span class="pendiente">`) en `privacidad.html`, `aviso-legal.html` y `condiciones.html`:
-
-- Nombre y apellidos del titular.
-- NIF (aviso legal).
-- Correo de contacto.
-
-Luego quita la clase `pendiente` o el `<span>` entero.
+Titular y correo de contacto están en `privacidad.html`, `aviso-legal.html` y `condiciones.html`. Si cambian, hay que actualizarlos en las tres páginas.
 
 ## Ver en local
 
