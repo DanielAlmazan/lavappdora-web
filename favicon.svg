@@ -1,7 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true">
-  <rect x="6" y="4" width="52" height="56" rx="12" fill="#00687A"/>
-  <circle cx="16" cy="14" r="3" fill="#7BE3F0"/>
-  <circle cx="26" cy="14" r="3" fill="#7BE3F0" opacity=".55"/>
-  <circle cx="32" cy="37" r="15" fill="#F3F7F7"/>
-  <path d="M19.5 39.5c4-4.5 8.5 3.5 13 0s8.5 3 12.5-1A13 13 0 0 1 19.5 39.5z" fill="#00687A"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" role="img" aria-label="Lavappdora">
+  <!-- Mismo dibujo que el icono de la app (androidApp/src/main/res/drawable/ic_launcher_*.xml) -->
+  <defs>
+    <linearGradient id="fondo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#18A0B8"/>
+      <stop offset="1" stop-color="#005A6B"/>
+    </linearGradient>
+  </defs>
+  <rect width="108" height="108" rx="24" fill="url(#fondo)"/>
+  <g transform="translate(27 27) scale(0.54)">
+    <path fill="#FFFFFF" d="M26,93h8a2,2 0 0 1 2,2v3a2,2 0 0 1 -2,2h-8a2,2 0 0 1 -2,-2v-3a2,2 0 0 1 2,-2zM66,93h8a2,2 0 0 1 2,2v3a2,2 0 0 1 -2,2h-8a2,2 0 0 1 -2,-2v-3a2,2 0 0 1 2,-2z"/>
+    <path fill="#FFFFFF" d="M24,0H76A14,14 0 0 1 90,14V82A14,14 0 0 1 76,96H24A14,14 0 0 1 10,82V14A14,14 0 0 1 24,0Z"/>
+    <path fill="#CDE7ED" d="M10,21H90V23H10Z"/>
+    <path fill="#7CC4D2" d="M21.5,8.5h15a2.5,2.5 0 0 1 0,5h-15a2.5,2.5 0 0 1 0,-5ZM65,8.5a2.5,2.5 0 1 0 0,5a2.5,2.5 0 1 0 0,-5ZM77,7a4,4 0 1 0 0,8a4,4 0 1 0 0,-8Z"/>
+    <path fill="#00687A" d="M50,31a28,28 0 1 0 0,56a28,28 0 1 0 0,-56Z"/>
+    <path fill="#D9F6FC" d="M50,37a22,22 0 1 0 0,44a22,22 0 1 0 0,-44Z"/>
+    <path fill="#00687A" d="M50,43a2.5,2.5 0 0 1 2.5,2.5v13.5a2.5,2.5 0 0 1 -5,0v-13.5a2.5,2.5 0 0 1 2.5,-2.5Z"/>
+    <path fill="#00687A" transform="rotate(120 50 59)" d="M50,47.5a2.5,2.5 0 0 1 2.5,2.5v9a2.5,2.5 0 0 1 -5,0v-9a2.5,2.5 0 0 1 2.5,-2.5Z"/>
+  </g>
 </svg>

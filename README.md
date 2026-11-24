@@ -17,6 +17,16 @@ Web estática de Lavappdora: landing y páginas legales. HTML y CSS a mano, sin 
 
 Titular y correo de contacto están en `privacidad.html`, `aviso-legal.html` y `condiciones.html`. Si cambian, hay que actualizarlos en las tres páginas.
 
+## Ramas
+
+- `main`: lo que se publica en lavappdora.com (GitHub Pages sirve esta rama).
+- `dev`: aquí se trabaja. Se revisa en local y, cuando está bien, se fusiona en `main` para publicar.
+
+```bash
+git switch main && git merge --ff-only dev && git push   # publicar
+git switch dev                                            # seguir trabajando
+```
+
 ## Ver en local
 
 ```bash
@@ -27,7 +37,7 @@ y abre http://localhost:8765.
 
 ## Publicar en GitHub Pages
 
-1. Crea el repositorio en GitHub y súbelo (rama `main`).
+1. Repositorio: github.com/DanielAlmazan/lavappdora-web (ya creado; Pages activado desde `main`).
 2. En *Settings → Pages*: *Source* = *Deploy from a branch*, rama `main`, carpeta `/ (root)`.
 3. El archivo `CNAME` ya pide el dominio `lavappdora.com`. En el proveedor del dominio crea:
    - Cuatro registros `A` para `lavappdora.com` hacia `185.199.108.153`, `185.199.109.153`, `185.199.110.153` y `185.199.111.153`.
