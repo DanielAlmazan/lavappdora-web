@@ -1,21 +1,28 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <!-- Icono de la app con el glifo ampliado: en el icono de Android ocupa el 54 % (zona segura
-       del adaptive icon); aquí el 84 % para que se vea en una pestaña de 16 px. -->
-  <defs>
-    <linearGradient id="fondo" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#18A0B8"/>
-      <stop offset="1" stop-color="#005A6B"/>
-    </linearGradient>
-  </defs>
-  <rect width="100" height="100" rx="22" fill="url(#fondo)"/>
-  <g transform="translate(8 8) scale(0.84)">
-    <path fill="#FFFFFF" d="M26,93h8a2,2 0 0 1 2,2v3a2,2 0 0 1 -2,2h-8a2,2 0 0 1 -2,-2v-3a2,2 0 0 1 2,-2zM66,93h8a2,2 0 0 1 2,2v3a2,2 0 0 1 -2,2h-8a2,2 0 0 1 -2,-2v-3a2,2 0 0 1 2,-2z"/>
-    <path fill="#FFFFFF" d="M24,0H76A14,14 0 0 1 90,14V82A14,14 0 0 1 76,96H24A14,14 0 0 1 10,82V14A14,14 0 0 1 24,0Z"/>
-    <path fill="#CDE7ED" d="M10,21H90V23H10Z"/>
-    <path fill="#7CC4D2" d="M21.5,8.5h15a2.5,2.5 0 0 1 0,5h-15a2.5,2.5 0 0 1 0,-5ZM65,8.5a2.5,2.5 0 1 0 0,5a2.5,2.5 0 1 0 0,-5ZM77,7a4,4 0 1 0 0,8a4,4 0 1 0 0,-8Z"/>
-    <path fill="#00687A" d="M50,31a28,28 0 1 0 0,56a28,28 0 1 0 0,-56Z"/>
-    <path fill="#D9F6FC" d="M50,37a22,22 0 1 0 0,44a22,22 0 1 0 0,-44Z"/>
-    <path fill="#00687A" d="M50,43a2.5,2.5 0 0 1 2.5,2.5v13.5a2.5,2.5 0 0 1 -5,0v-13.5a2.5,2.5 0 0 1 2.5,-2.5Z"/>
-    <path fill="#00687A" transform="rotate(120 50 59)" d="M50,47.5a2.5,2.5 0 0 1 2.5,2.5v9a2.5,2.5 0 0 1 -5,0v-9a2.5,2.5 0 0 1 2.5,-2.5Z"/>
-  </g>
+  <!-- Solo el glifo del icono de la app (lavadora con tambor-reloj), sin fondo, ocupando todo el alto.
+       Los colores cambian con el tema del navegador para que se vea en pestañas claras y oscuras. -->
+  <style>
+    .cuerpo { fill: #00687A; }
+    .linea { fill: #18A0B8; }
+    .mandos { fill: #7CC4D2; }
+    .aro { fill: #FFFFFF; }
+    .esfera { fill: #D9F6FC; }
+    .agujas { fill: #00687A; }
+    @media (prefers-color-scheme: dark) {
+      .cuerpo { fill: #E3F7FB; }
+      .linea { fill: #9FD9E4; }
+      .mandos { fill: #18A0B8; }
+      .aro { fill: #00687A; }
+      .esfera { fill: #12333A; }
+      .agujas { fill: #7BE3F0; }
+    }
+  </style>
+  <path class="cuerpo" d="M26,93h8a2,2 0 0 1 2,2v3a2,2 0 0 1 -2,2h-8a2,2 0 0 1 -2,-2v-3a2,2 0 0 1 2,-2zM66,93h8a2,2 0 0 1 2,2v3a2,2 0 0 1 -2,2h-8a2,2 0 0 1 -2,-2v-3a2,2 0 0 1 2,-2z"/>
+  <path class="cuerpo" d="M24,0H76A14,14 0 0 1 90,14V82A14,14 0 0 1 76,96H24A14,14 0 0 1 10,82V14A14,14 0 0 1 24,0Z"/>
+  <path class="linea" d="M10,21H90V23H10Z"/>
+  <path class="mandos" d="M21.5,8.5h15a2.5,2.5 0 0 1 0,5h-15a2.5,2.5 0 0 1 0,-5ZM65,8.5a2.5,2.5 0 1 0 0,5a2.5,2.5 0 1 0 0,-5ZM77,7a4,4 0 1 0 0,8a4,4 0 1 0 0,-8Z"/>
+  <path class="aro" d="M50,31a28,28 0 1 0 0,56a28,28 0 1 0 0,-56Z"/>
+  <path class="esfera" d="M50,37a22,22 0 1 0 0,44a22,22 0 1 0 0,-44Z"/>
+  <path class="agujas" d="M50,43a2.5,2.5 0 0 1 2.5,2.5v13.5a2.5,2.5 0 0 1 -5,0v-13.5a2.5,2.5 0 0 1 2.5,-2.5Z"/>
+  <path class="agujas" transform="rotate(120 50 59)" d="M50,47.5a2.5,2.5 0 0 1 2.5,2.5v9a2.5,2.5 0 0 1 -5,0v-9a2.5,2.5 0 0 1 2.5,-2.5Z"/>
 </svg>
