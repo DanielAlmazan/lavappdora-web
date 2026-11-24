@@ -1,0 +1,14 @@
+.DS_Store
+
+# Archivos de asistentes de IA (no versionar)
+CLAUDE.md
+CLAUDE.local.md
+AGENTS.md
+GEMINI.md
+.claude/
+.cursor/
+.cursorrules
+.gemini/
+.codex/
+.aider*
+.github/copilot-instructions.md

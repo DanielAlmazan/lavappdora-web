@@ -1,0 +1,215 @@
+/* Lavappdora — web estática. Sin fuentes ni scripts de terceros. */
+:root {
+  --esmalte: #F3F7F7;      /* fondo: chapa blanca de electrodoméstico */
+  --tinta: #0E2A30;        /* texto */
+  --tinta-suave: #44606A;
+  --teal: #00687A;         /* color de la app */
+  --panel: #0F3B42;        /* panel del display */
+  --lcd: #7BE3F0;          /* dígitos encendidos */
+  --lcd-apagado: rgba(123, 227, 240, 0.06);
+  --valle: #2E9E78;
+  --punta: #E0A21B;
+  --linea: #D3E1E3;
+  --blanco: #FFFFFF;
+
+  --redondeada: ui-rounded, "SF Pro Rounded", "Hiragino Maru Gothic ProN", Quicksand, Comfortaa, Manjari,
+    "Arial Rounded MT", "Arial Rounded MT Bold", Calibri, source-sans-pro, sans-serif;
+  --humanista: Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans", source-sans-pro, sans-serif;
+
+  --medida: 68ch;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--esmalte);
+  color: var(--tinta);
+  font-family: var(--humanista);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+img, svg { display: block; max-width: 100%; }
+
+a { color: var(--teal); text-underline-offset: 0.18em; }
+a:hover { color: var(--tinta); }
+
+:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; border-radius: 4px; }
+
+.salto {
+  position: absolute; left: -999px; top: 0.5rem;
+  background: var(--tinta); color: var(--blanco); padding: 0.5rem 1rem; border-radius: 6px;
+}
+.salto:focus { left: 0.5rem; }
+
+/* Solo para lectores de pantalla */
+.oculto { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+.envoltorio { width: min(100% - 2rem, 70rem); margin-inline: auto; }
+
+/* Cabecera */
+.cabecera { padding-block: 1.25rem; }
+.cabecera .envoltorio { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.marca {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-family: var(--redondeada); font-weight: 800; font-size: 1.35rem;
+  color: var(--tinta); text-decoration: none;
+}
+.marca svg { width: 2rem; height: 2rem; }
+.cabecera nav a { font-family: var(--redondeada); font-weight: 600; text-decoration: none; }
+
+/* Hero */
+.hero { padding-block: clamp(2rem, 6vw, 5rem) clamp(2.5rem, 6vw, 4.5rem); }
+.hero .envoltorio {
+  display: grid; gap: clamp(2rem, 5vw, 4rem);
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); align-items: center;
+}
+.hero h1 {
+  font-family: var(--redondeada); font-weight: 800;
+  font-size: clamp(2.4rem, 5.6vw, 4.3rem); line-height: 1.04; letter-spacing: -0.02em;
+  margin: 0 0 1.25rem; max-width: 14ch;
+}
+.hero p { font-size: 1.2rem; color: var(--tinta-suave); max-width: 38ch; margin: 0 0 1.75rem; }
+
+.hero .disponible {
+  display: inline-block; font-family: var(--redondeada); font-weight: 700;
+  background: var(--tinta); color: var(--esmalte); padding: 0.8rem 1.25rem; border-radius: 16px;
+}
+.hero .disponible small { display: block; font-weight: 500; opacity: 0.75; font-size: 0.85rem; }
+
+/* Panel de la lavadora: lo memorable de la página */
+.panel {
+  background: var(--panel); color: var(--lcd); border-radius: 28px;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.05), 0 30px 60px -30px rgba(14, 42, 48, 0.55);
+}
+.panel-fila { display: flex; align-items: center; gap: clamp(1rem, 3vw, 2rem); }
+.mando {
+  flex: none; width: clamp(4.5rem, 12vw, 6.5rem); aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #3B6E76, #133F46 70%);
+  box-shadow: 0 0 0 6px rgba(123, 227, 240, 0.12), inset 0 -6px 12px rgba(0, 0, 0, 0.35);
+  position: relative;
+}
+.mando::after {
+  content: ""; position: absolute; left: 50%; top: 10%; width: 6px; height: 26%;
+  margin-left: -3px; border-radius: 3px; background: var(--lcd); transform-origin: 50% 155%;
+  transform: rotate(38deg);
+}
+.lcd {
+  flex: 1; background: #0A2C31; border-radius: 14px; padding: 1rem 1.25rem 0.9rem;
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+.lcd-titulo { font-family: var(--redondeada); font-size: 0.95rem; color: rgba(123, 227, 240, 0.75); margin: 0 0 0.4rem; }
+.lcd-digits { width: 100%; height: auto; }
+.seg { fill: var(--lcd-apagado); }
+.seg.on { fill: var(--lcd); filter: drop-shadow(0 0 6px rgba(123, 227, 240, 0.55)); }
+.lcd-unit { fill: var(--lcd); font-family: var(--redondeada); font-weight: 700; font-size: 44px; }
+.panel-pie {
+  display: flex; justify-content: space-between; gap: 1rem; margin-top: 1rem;
+  font-family: var(--redondeada); font-size: 0.95rem; color: rgba(123, 227, 240, 0.8);
+}
+
+/* Encendido del display al cargar (único movimiento de la página) */
+@media (prefers-reduced-motion: no-preference) {
+  .seg.on { animation: encender 900ms ease-out both; }
+  .seg.on:nth-of-type(2n) { animation-delay: 120ms; }
+  .seg.on:nth-of-type(3n) { animation-delay: 240ms; }
+  .lcd-unit { animation: encender 900ms 380ms ease-out both; }
+  @keyframes encender { from { fill: var(--lcd-apagado); filter: none; } }
+}
+
+/* Tira de precios */
+.precios { background: var(--blanco); border-block: 1px solid var(--linea); padding-block: clamp(2.5rem, 6vw, 4rem); }
+.precios .envoltorio {
+  display: grid; gap: clamp(1.5rem, 4vw, 3.5rem);
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); align-items: center;
+}
+.strip { width: 100%; height: auto; overflow: visible; }
+.bar { fill: #B9CBCE; }
+.bar.dear { fill: var(--punta); }
+.bar.wash { fill: var(--valle); }
+.window { fill: rgba(46, 158, 120, 0.1); stroke: var(--valle); stroke-width: 2; stroke-dasharray: 5 4; }
+.window-label { fill: var(--valle); font-family: var(--redondeada); font-weight: 700; font-size: 15px; }
+.axis { fill: var(--tinta-suave); font-family: var(--humanista); font-size: 13px; }
+.fuente { font-size: 0.9rem; color: var(--tinta-suave); margin: 0.75rem 0 0; }
+
+h2 {
+  font-family: var(--redondeada); font-weight: 800; letter-spacing: -0.01em;
+  font-size: clamp(1.7rem, 3.4vw, 2.4rem); line-height: 1.12; margin: 0 0 1rem;
+}
+.texto p { margin: 0 0 1rem; max-width: 46ch; }
+
+/* Cómo funciona: es una secuencia real, por eso va numerada */
+.pasos-seccion { padding-block: clamp(3rem, 7vw, 5.5rem); }
+.pasos { list-style: none; padding: 0; margin: 2rem 0 0; display: grid; gap: 1.5rem; grid-template-columns: repeat(3, minmax(0, 1fr)); counter-reset: paso; }
+.pasos li { counter-increment: paso; border-top: 3px solid var(--teal); padding-top: 1rem; }
+.pasos li::before {
+  content: counter(paso); display: block; font-family: var(--redondeada); font-weight: 800;
+  font-size: 2.2rem; line-height: 1; color: var(--teal); margin-bottom: 0.6rem;
+}
+.pasos h3 { font-family: var(--redondeada); font-size: 1.2rem; margin: 0 0 0.35rem; }
+.pasos p { margin: 0; color: var(--tinta-suave); }
+
+/* Capturas */
+.capturas { padding-block: 0 clamp(3rem, 7vw, 5.5rem); }
+.capturas .envoltorio { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(1.25rem, 3vw, 2.5rem); align-items: center; }
+.captura { margin: 0; }
+.movil {
+  border-radius: 36px; overflow: hidden; background: var(--blanco);
+  box-shadow: 0 0 0 8px var(--tinta), 0 30px 50px -30px rgba(14, 42, 48, 0.6);
+}
+.movil img { width: 100%; height: auto; }
+.captura figcaption { margin-top: 1.25rem; font-size: 0.95rem; color: var(--tinta-suave); }
+
+/* Privacidad */
+.privacidad { background: var(--panel); color: #E3F4F6; padding-block: clamp(3rem, 7vw, 5rem); }
+.privacidad .envoltorio { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); }
+.privacidad h2 { color: var(--blanco); }
+.privacidad ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.9rem; }
+.privacidad li { padding-left: 1.75rem; position: relative; }
+.privacidad li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 0.7rem; height: 0.7rem; border-radius: 50%; background: var(--lcd); }
+.privacidad a { color: var(--lcd); }
+
+/* Historia */
+.historia { padding-block: clamp(3rem, 7vw, 5rem); }
+.historia blockquote { margin: 0; max-width: 34ch; font-family: var(--redondeada); font-weight: 700; font-size: clamp(1.4rem, 2.8vw, 2rem); line-height: 1.25; }
+.historia p { color: var(--tinta-suave); max-width: 52ch; }
+
+/* Pie */
+.pie { border-top: 1px solid var(--linea); padding-block: 2rem 3rem; font-size: 0.95rem; color: var(--tinta-suave); }
+.pie .envoltorio { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem; }
+.pie p { margin: 0; }
+.pie ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+
+/* Páginas legales */
+.legal { padding-block: clamp(2rem, 5vw, 3.5rem) clamp(3rem, 6vw, 5rem); }
+.legal article { max-width: var(--medida); }
+.legal h1 { font-family: var(--redondeada); font-weight: 800; font-size: clamp(2rem, 4.5vw, 2.8rem); line-height: 1.1; margin: 0 0 0.5rem; }
+.legal .fecha { color: var(--tinta-suave); margin: 0 0 2rem; }
+.legal h2 { font-size: 1.35rem; margin: 2.25rem 0 0.6rem; }
+.legal p, .legal li { line-height: 1.7; }
+.legal ul { padding-left: 1.25rem; }
+.legal table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.97rem; }
+.legal th, .legal td { text-align: left; vertical-align: top; padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--linea); }
+.legal th { font-family: var(--redondeada); }
+.pendiente { background: #FFE7A8; border-radius: 3px; padding: 0 0.2em; }
+
+@media (max-width: 860px) {
+  .hero .envoltorio, .precios .envoltorio, .privacidad .envoltorio { grid-template-columns: minmax(0, 1fr); }
+  .pasos { grid-template-columns: minmax(0, 1fr); }
+  .capturas .envoltorio { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .capturas .texto { grid-column: 1 / -1; order: -1; }
+  .legal table, .legal thead, .legal tbody, .legal tr, .legal th, .legal td { display: block; }
+  .legal thead { display: none; }
+  .legal td { border: 0; padding: 0.15rem 0; }
+  .legal tr { border-bottom: 1px solid var(--linea); padding: 0.6rem 0; }
+  .legal td:first-child { font-weight: 600; }
+}
+@media (max-width: 480px) {
+  .capturas .envoltorio { grid-template-columns: minmax(0, 1fr); }
+  .captura { max-width: 18rem; margin-inline: auto; }
+  .panel-pie { flex-direction: column; gap: 0.25rem; }
+}
